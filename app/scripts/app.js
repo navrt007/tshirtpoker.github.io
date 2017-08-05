@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('firePokerApp', ['firebase', 'ngCookies'])
   .config(function ($routeProvider) {
     $routeProvider
@@ -23,4 +24,9 @@ angular.module('firePokerApp', ['firebase', 'ngCookies'])
         redirectTo: '/'
       });
   });
-
+    
+var express = require('express');
+var port = process.env.PORT || 3000;
+var app = express();
+app.use(express.static(__dirname + '/public'));
+app.listen(port);
